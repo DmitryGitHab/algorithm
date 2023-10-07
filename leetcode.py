@@ -1,4 +1,4 @@
-# 1
+# 1 Two Sum
 '''Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 You may assume that each input would have exactly one solution, and you may not use the same element twice.
 You can return the answer in any order.'''
@@ -17,3 +17,27 @@ def twoSum(nums: List[int], target: int) -> List[int]:
 nums = [2, 7, 15, 17]
 target = 9
 print(twoSum(nums, target))
+
+
+#9 Palindrome Number
+"""Given an integer x, return true if x is a 
+palindrome, and false otherwise."""
+def isPalindrome(x: int) -> bool:
+    if x < 0:
+        return False
+    new_num = 0
+    temp = x
+    while temp != 0:
+        digit = temp % 10
+        new_num = new_num * 10 + digit
+        temp //= 10
+    return new_num == x
+
+def isPalindrome_str(x: int) -> bool:
+    if str(x) == str(x)[::-1]:
+        return True
+    else:
+        return False
+
+print(isPalindrome(323))
+print(isPalindrome_str(323))
