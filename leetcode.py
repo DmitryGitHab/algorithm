@@ -39,5 +39,19 @@ def isPalindrome_str(x: int) -> bool:
     else:
         return False
 
-print(isPalindrome(323))
-print(isPalindrome_str(323))
+# print(isPalindrome(323))
+# print(isPalindrome_str(323))
+
+def intToRoman(num: int) -> str:
+    values = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
+    n = {1000: 'M', 900: 'CM', 500: 'D', 400: 'CD', 100: 'C', 90: 'XC', 50: 'L', 40: 'XL', 10: 'X', 9: 'IX', 5: 'V',
+         4: 'IV', 1: 'I'}
+    r = ''
+
+    for i in values:
+        while num >= i:
+            num -= i
+            r += n[i]
+    return r
+
+print(intToRoman(1994))
