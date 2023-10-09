@@ -54,4 +54,19 @@ def intToRoman(num: int) -> str:
             r += n[i]
     return r
 
-print(intToRoman(1994))
+# print(intToRoman(1994))
+
+# 14. Longest Common Prefix
+"""Write a function to find the longest common prefix string amongst an array of strings.
+If there is no common prefix, return an empty string ''."""
+def longestCommonPrefix(strs: List[str]) -> str:
+    ans = ''
+
+    for i, val in enumerate(zip(*strs)):
+        if len(set(val)) == 1:
+            ans += val[0]
+        else:
+            break
+    return ans
+
+print(longestCommonPrefix(["flower","flow","flight"]))
